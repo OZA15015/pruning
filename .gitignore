@@ -35,5 +35,7 @@ distiller.egg-info/
 # Jupyter
 .ipynb_checkpoints/
 
+
+examples/classifier_compression/data/cifar-10-python.tar.gz
 #data/
 #/home/oza/pre-experiment/speeding/distiller/examples/classifier_compression/data
