@@ -16,6 +16,7 @@ examples/ncf*/ml-20m*
 examples/GNMT/data
 examples/GNMT/model_best.pth
 examples/GNMT/output_file*
+examples/classifier_compression/data/cifar-10-python.tar.gz
 
 # Virtual env
 env/
@@ -36,6 +37,6 @@ distiller.egg-info/
 .ipynb_checkpoints/
 
 
-examples/classifier_compression/data/cifar-10-python.tar.gz
+#examples/classifier_compression/data/cifar-10-python.tar.gz
 #data/
 #/home/oza/pre-experiment/speeding/distiller/examples/classifier_compression/data
