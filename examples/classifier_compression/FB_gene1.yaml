@@ -10,54 +10,54 @@ pruners:
   conv2_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.12
+    final_sparsity: 0.84
     weights: [module.stages.xif1_0.pw.conv.weight]
   conv3_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.65
+    final_sparsity: 0.46
     weights: [module.stages.xif1_0.dw.conv.weight]
 
   conv4_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.48
+    final_sparsity: 0.9
     weights: [module.stages.xif1_0.pwl.conv.weight]
 
   conv5_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.9
+    final_sparsity: 0.14
     weights: [module.stages.xif2_0.pw.conv.weight]
 
   conv6_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.16
+    final_sparsity: 0.71
     weights: [module.stages.xif2_0.dw.conv.weight]
 
   conv7_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.68
+    final_sparsity: 0.2
     weights: [module.stages.xif2_0.pwl.conv.weight]
 
   conv8_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.06
+    final_sparsity: 0.58
     weights: [module.stages.xif5_0.pw.conv.weight]
 
   conv9_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.95
+    final_sparsity: 0.43
     weights: [module.stages.xif5_0.dw.conv.weight]
 
   conv10_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.06
+    final_sparsity: 0.86
     weights: [module.stages.xif5_0.pwl.conv.weight]
 
   conv11_pruner:
@@ -69,79 +69,79 @@ pruners:
   conv12_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.38
+    final_sparsity: 0.29
     weights: [module.stages.xif6_0.dw.conv.weight]
 
   conv13_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.9
+    final_sparsity: 0.44
     weights: [module.stages.xif6_0.pwl.conv.weight]
 
   conv14_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.38
+    final_sparsity: 0.19
     weights: [module.stages.xif7_0.pw.conv.weight]
 
   conv15_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.57
+    final_sparsity: 0.98
     weights: [module.stages.xif7_0.dw.conv.weight]
 
   conv16_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.55
+    final_sparsity: 0.52
     weights: [module.stages.xif7_0.pwl.conv.weight]
 
   conv17_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.14
+    final_sparsity: 0.78
     weights: [module.stages.xif8_0.pw.conv.weight]
 
   conv18_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.44
+    final_sparsity: 0.43
     weights: [module.stages.xif8_0.dw.conv.weight]
 
   conv19_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.7
+    final_sparsity: 0.51
     weights: [module.stages.xif8_0.pwl.conv.weight]
 
   conv20_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.36
+    final_sparsity: 0.9
     weights: [module.stages.xif9_0.pw.conv.weight]
 
   conv21_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.46
+    final_sparsity: 0.9
     weights: [module.stages.xif9_0.dw.conv.weight]
 
   conv22_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.31
+    final_sparsity: 0.4
     weights: [module.stages.xif9_0.pwl.conv.weight]
 
   conv23_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.22
+    final_sparsity: 0.24
     weights: [module.stages.xif10_0.pw.conv.weight]
 
   conv24_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.9
+    final_sparsity: 0.65
     weights: [module.stages.xif10_0.dw.conv.weight]
 
   conv25_pruner:
@@ -153,109 +153,109 @@ pruners:
   conv26_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.6
+    final_sparsity: 0.79
     weights: [module.stages.xif11_0.pw.conv.weight]
 
   conv27_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.26
+    final_sparsity: 0.91
     weights: [module.stages.xif11_0.dw.conv.weight]
 
   conv28_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.95
+    final_sparsity: 0.18
     weights: [module.stages.xif11_0.pwl.conv.weight]
 
   conv29_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.67
+    final_sparsity: 0.49
     weights: [module.stages.xif12_0.pw.conv.weight]
 
   conv30_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.74
+    final_sparsity: 0.19
     weights: [module.stages.xif12_0.dw.conv.weight]
 
   conv31_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.44
+    final_sparsity: 0.9
     weights: [module.stages.xif12_0.pwl.conv.weight]
 
   conv32_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.9
+    final_sparsity: 0.76
     weights: [module.stages.xif13_0.pw.conv.weight]
 
   conv33_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.9
+    final_sparsity: 0.92
     weights: [module.stages.xif13_0.dw.conv.weight]
 
   conv34_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.59
+    final_sparsity: 0.94
     weights: [module.stages.xif13_0.pwl.conv.weight]
 
   conv35_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.06
+    final_sparsity: 0.18
     weights: [module.stages.xif14_0.pw.conv.weight]
 
   conv36_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.7
+    final_sparsity: 0.9
     weights: [module.stages.xif14_0.dw.conv.weight]
 
   conv37_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.65
+    final_sparsity: 0.28
     weights: [module.stages.xif14_0.pwl.conv.weight]
 
   conv38_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.4
+    final_sparsity: 0.9
     weights: [module.stages.xif15_0.pw.conv.weight]
 
   conv39_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.49
+    final_sparsity: 0.68
     weights: [module.stages.xif15_0.dw.conv.weight]
 
   conv40_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.42
+    final_sparsity: 0.68
     weights: [module.stages.xif15_0.pwl.conv.weight]
 
   conv41_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.15
+    final_sparsity: 0.61
     weights: [module.stages.xif16_0.pw.conv.weight]
 
   conv42_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.5
+    final_sparsity: 0.23
     weights: [module.stages.xif16_0.dw.conv.weight]
 
   conv43_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.68
+    final_sparsity: 0.14
     weights: [module.stages.xif16_0.pwl.conv.weight]
 
   conv44_pruner:
@@ -267,37 +267,37 @@ pruners:
   conv45_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.26
+    final_sparsity: 0.44
     weights: [module.stages.xif17_0.dw.conv.weight]
 
   conv46_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.74
+    final_sparsity: 0.46
     weights: [module.stages.xif17_0.pwl.conv.weight]
 
   conv47_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.55
+    final_sparsity: 0.88
     weights: [module.stages.xif18_0.pw.conv.weight]
 
   conv48_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.09
+    final_sparsity: 0.9
     weights: [module.stages.xif18_0.dw.conv.weight]
 
   conv49_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.54
+    final_sparsity: 0.62
     weights: [module.stages.xif18_0.pwl.conv.weight]
 
   conv50_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.47
+    final_sparsity: 0.32
     weights: [module.stages.xif19_0.pw.conv.weight]
 
   conv51_pruner:
@@ -309,55 +309,55 @@ pruners:
   conv52_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.16
+    final_sparsity: 0.9
     weights: [module.stages.xif19_0.pwl.conv.weight]
 
   conv53_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.74
+    final_sparsity: 0.25
     weights: [module.stages.xif20_0.pw.conv.weight]
 
   conv54_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.62
+    final_sparsity: 0.6
     weights: [module.stages.xif20_0.dw.conv.weight]
 
   conv55_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.46
+    final_sparsity: 0.59
     weights: [module.stages.xif20_0.pwl.conv.weight]
 
   conv56_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.23
+    final_sparsity: 0.9
     weights: [module.stages.xif21_0.pw.conv.weight]
 
   conv57_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.94
+    final_sparsity: 0.66
     weights: [module.stages.xif21_0.dw.conv.weight]
 
   conv58_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.35
+    final_sparsity: 0.32
     weights: [module.stages.xif21_0.pwl.conv.weight]
 
   conv59_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.05
-    final_sparsity: 0.66
+    final_sparsity: 0.9
     weights: [module.last_stages.conv_k1.weight]
 
   fc_pruner:
     class: AutomatedGradualPruner
     initial_sparsity: 0.3
-    final_sparsity: 0.9
+    final_sparsity: 0.42
     weights: [module.last_stages.fc.weight]
 
 lr_schedulers:
