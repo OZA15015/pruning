@@ -34,3 +34,5 @@ distiller.egg-info/
 
 # Jupyter
 .ipynb_checkpoints/
+
+data/
