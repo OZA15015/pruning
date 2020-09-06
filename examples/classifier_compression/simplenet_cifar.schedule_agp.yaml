@@ -1,0 +1,50 @@
+version: 1
+pruners:
+  conv1_pruner:
+    class: 'AutomatedGradualPruner'
+    initial_sparsity : 0.15
+    final_sparsity: 0.16
+    weights: [module.conv1.weight]
+
+  conv2_pruner:
+    class: 'AutomatedGradualPruner'
+    initial_sparsity : 0.15
+    final_sparsity: 0.5
+    weights: [module.conv2.weight]
+
+  fc_pruner:
+    class: 'AutomatedGradualPruner'
+    initial_sparsity : 0.15
+    final_sparsity: 0.80
+    weights: [module.fc1.weight, module.fc2.weight, module.fc3.weight]
+
+lr_schedulers:
+  pruning_lr:
+    class: StepLR
+    step_size: 30
+    gamma: 0.10
+
+policies:
+  - pruner:
+      instance_name : 'conv1_pruner'
+    starting_epoch: 1
+    ending_epoch: 100
+    frequency: 2
+
+  - pruner:
+      instance_name : 'conv2_pruner'
+    starting_epoch: 1
+    ending_epoch: 100
+    frequency: 2
+
+  - pruner:
+      instance_name : 'fc_pruner'
+    starting_epoch: 1
+    ending_epoch: 100
+    frequency: 2
+
+  - lr_scheduler:
+      instance_name: pruning_lr
+    starting_epoch: 1
+    ending_epoch: 100
+    frequency: 1

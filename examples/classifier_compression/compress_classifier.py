@@ -50,7 +50,8 @@ models, or with the provided sample models:
 - ResNet for CIFAR: https://github.com/junyuseu/pytorch-cifar-models
 - MobileNet for ImageNet: https://github.com/marvis/pytorch-mobilenet
 """
-
+import sys
+sys.path.append('/home/oza/pre-experiment/speeding/testFB/FBNet')
 import traceback
 import logging
 from functools import partial
@@ -63,7 +64,6 @@ import os
 import numpy as np
 from ptq_lapq import image_classifier_ptq_lapq
 
-
 # Logger handle
 msglogger = logging.getLogger()
 
@@ -71,12 +71,17 @@ msglogger = logging.getLogger()
 def main():
     # Parse arguments
     args = parser.add_cmdline_args(classifier.init_classifier_compression_arg_parser(True)).parse_args()
+    performance_tracker = apputils.SparsityAccuracyTracker(args.num_best_scores)
+    #args.compress = 'OZA'
+    #print(args.compress)
+    #quit()
     app = ClassifierCompressorSampleApp(args, script_dir=os.path.dirname(__file__))
     if app.handle_subapps():
         return
     init_knowledge_distillation(app.args, app.model, app.compression_scheduler)
     app.run_training_loop()
     # Finally run results on the test set
+    # return top1, top5, losssesが来る
     return app.test()
 
     
@@ -200,6 +205,7 @@ def greedy(model, criterion, optimizer, loggers, args):
     test_fn = partial(classifier.test, test_loader=test_loader, criterion=criterion,
                       loggers=loggers, args=args, activations_collectors=None)
     train_fn = partial(classifier.train, train_loader=train_loader, criterion=criterion, args=args)
+
     assert args.greedy_target_density is not None
     distiller.pruning.greedy_filter_pruning.greedy_pruner(model, args,
                                                           args.greedy_target_density,
@@ -227,3 +233,4 @@ if __name__ == '__main__':
         if msglogger is not None and hasattr(msglogger, 'log_filename'):
             msglogger.info('')
             msglogger.info('Log file for this run: ' + os.path.realpath(msglogger.log_filename))
+    print(msglogger)

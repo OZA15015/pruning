@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "compress_classifier.py", line 57, in <module>
+    import distiller
+  File "/home/oza/pre-experiment/speeding/distiller/distiller/__init__.py", line 20, in <module>
+    from .config import file_config, dict_config, config_component_from_file_by_class
+  File "/home/oza/pre-experiment/speeding/distiller/distiller/config.py", line 42, in <module>
+    from distiller.pruning import *
+  File "/home/oza/pre-experiment/speeding/distiller/distiller/pruning/__init__.py", line 44, in <module>
+    from .greedy_filter_pruning import greedy_pruner
+  File "/home/oza/pre-experiment/speeding/distiller/distiller/pruning/greedy_filter_pruning.py", line 49, in <module>
+    from distiller.data_loggers import PythonLogger
+  File "/home/oza/pre-experiment/speeding/distiller/distiller/data_loggers/__init__.py", line 18, in <module>
+    from .logger import PythonLogger, TensorBoardLogger, CsvLogger, NullLogger
+  File "/home/oza/pre-experiment/speeding/distiller/distiller/data_loggers/logger.py", line 32, in <module>
+    from .tbbackend import TBBackend
+  File "/home/oza/pre-experiment/speeding/distiller/distiller/data_loggers/tbbackend.py", line 25, in <module>
+    import tensorflow as tf
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow/__init__.py", line 102, in <module>
+    from tensorflow_core import *
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow_core/__init__.py", line 28, in <module>
+    from tensorflow.python import pywrap_tensorflow  # pylint: disable=unused-import
+  File "<frozen importlib._bootstrap>", line 1019, in _handle_fromlist
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow/__init__.py", line 50, in __getattr__
+    module = self._load()
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow/__init__.py", line 44, in _load
+    module = _importlib.import_module(self.__name__)
+  File "/home/oza/.pyenv/versions/3.7.4/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow_core/python/__init__.py", line 83, in <module>
+    from tensorflow.python import keras
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow_core/python/keras/__init__.py", line 26, in <module>
+    from tensorflow.python.keras import activations
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow_core/python/keras/__init__.py", line 26, in <module>
+    from tensorflow.python.keras import activations
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow_core/python/keras/activations.py", line 23, in <module>
+    from tensorflow.python.keras.utils.generic_utils import deserialize_keras_object
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow_core/python/keras/utils/__init__.py", line 34, in <module>
+    from tensorflow.python.keras.utils.io_utils import HDF5Matrix
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/tensorflow_core/python/keras/utils/io_utils.py", line 30, in <module>
+    import h5py
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/h5py/__init__.py", line 59, in <module>
+    from ._hl.files import (
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/h5py/_hl/files.py", line 220, in <module>
+    class File(Group):
+  File "/home/oza/.pyenv/versions/oza2/lib/python3.7/site-packages/h5py/_hl/files.py", line 463, in File
+    @with_phil
+  File "h5py/_objects.pyx", line 51, in h5py._objects.with_phil
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 963, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 906, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1278, in find_spec
+KeyboardInterrupt

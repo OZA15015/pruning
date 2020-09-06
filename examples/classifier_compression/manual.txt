@@ -1,0 +1,5 @@
+FBNetAのモデルパス
+/home/oza/pre-experiment/speeding/distiller/examples/classifier_compression/logs/0830fbnet_a/best_model.pth
+
+simplenetのモデルパス
+/home/oza/pre-experiment/speeding/distiller/examples/classifier_compression/logs/simple_net0830/best.pth.tar

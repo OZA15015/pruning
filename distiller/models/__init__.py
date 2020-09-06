@@ -126,7 +126,10 @@ def create_model(pretrained, dataset, arch, parallel=True, device_ids=None):
     cadene = False
     try:
         if dataset == 'imagenet':
+            #print("OZA")
+            dataset = 'cifar10'
             model, cadene = _create_imagenet_model(arch, pretrained)
+            #model = _create_cifar10_model(arch, pretrained)
         elif dataset == 'cifar10':
             model = _create_cifar10_model(arch, pretrained)
         elif dataset == 'mnist':

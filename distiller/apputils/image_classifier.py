@@ -86,11 +86,10 @@ class ClassifierCompressor(object):
     @property
     def data_loaders(self):
         return self.train_loader, self.val_loader, self.test_loader
-
     @staticmethod
     def _infer_implicit_args(args):
         # Infer the dataset from the model name
-        if not hasattr(args, 'dataset'):
+        if not hasattr(args, 'dataset'): #データセット名読み込み, model名にcifarと入っていれば, cifarなど,dataloder.py, 同階層
             args.dataset = distiller.apputils.classification_dataset_str_from_arch(args.arch)
         if not hasattr(args, "num_classes"):
             args.num_classes = distiller.apputils.classification_num_classes(args.dataset)
@@ -156,9 +155,9 @@ class ClassifierCompressor(object):
         return top1, top5, vloss
 
     def _finalize_epoch(self, epoch, top1, top5):
-        # Update the list of top scores achieved so far, and save the checkpoint
+        # Update the list of top scores chieved so far, and save the checkpoint
         self.performance_tracker.step(self.model, epoch, top1=top1, top5=top5)
-        _log_best_scores(self.performance_tracker, msglogger)
+        accuracy, sparce = _log_best_scores(self.performance_tracker, msglogger)# ここ追加
         best_score = self.performance_tracker.best_scores()[0]
         is_best = epoch == best_score.epoch
         checkpoint_extras = {'current_top1': top1,
@@ -168,7 +167,8 @@ class ClassifierCompressor(object):
             apputils.save_checkpoint(epoch, self.args.arch, self.model, optimizer=self.optimizer,
                                      scheduler=self.compression_scheduler, extras=checkpoint_extras,
                                      is_best=is_best, name=self.args.name, dir=msglogger.logdir)
-
+        
+        return accuracy, sparce #ここ追加
     def run_training_loop(self):
         """Run the main training loop with compression.
 
@@ -187,10 +187,17 @@ class ClassifierCompressor(object):
         self.load_datasets()
 
         self.performance_tracker.reset()
+        accuracy = 0
+        sparce = 0
         for epoch in range(self.start_epoch, self.ending_epoch):
             msglogger.info('\n')
             top1, top5, loss = self.train_validate_with_scheduling(epoch)
-            self._finalize_epoch(epoch, top1, top5)
+            accuracy, sparce = self._finalize_epoch(epoch, top1, top5) #ここ追加
+            print(accuracy)
+            print(sparce)
+            if os.path.isfile("/home/oza/pre-experiment/speeding/distiller/distiller/apputils/simple_gene.npz"):
+                os.remove("/home/oza/pre-experiment/speeding/distiller/distiller/apputils/simple_gene.npz") 
+        np.savez("/home/oza/pre-experiment/speeding/distiller/distiller/apputils/simple_gene.npz", array_1=accuracy, array_2=sparce)
         return self.performance_tracker.perf_scores_history
 
     def validate(self, epoch=-1):
@@ -394,9 +401,10 @@ def _init_learner(args):
 
     optimizer = None
     start_epoch = 0
-    if args.resumed_checkpoint_path:
+    if args.resumed_checkpoint_path: #ここでmodelのparam読み込み
         model, compression_scheduler, optimizer, start_epoch = apputils.load_checkpoint(
             model, args.resumed_checkpoint_path, model_device=args.device)
+
     elif args.load_model_path:
         model = apputils.load_lean_checkpoint(model, args.load_model_path, model_device=args.device)
     if args.reset_optimizer:
@@ -992,3 +1000,4 @@ def _log_best_scores(performance_tracker, logger, how_many=-1):
     for score in best_scores:
         logger.info('==> Best [Top1: %.3f   Top5: %.3f   Sparsity:%.2f   NNZ-Params: %d on epoch: %d]',
                     score.top1, score.top5, score.sparsity, -score.params_nnz_cnt, score.epoch)
+    return score.top1, score.sparsity

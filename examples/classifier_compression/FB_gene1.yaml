@@ -1,0 +1,734 @@
+version: 1
+
+pruners:
+  conv1_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.37
+    weights: [module.first.conv.weight]
+
+  conv2_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.12
+    weights: [module.stages.xif1_0.pw.conv.weight]
+  conv3_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.65
+    weights: [module.stages.xif1_0.dw.conv.weight]
+
+  conv4_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.48
+    weights: [module.stages.xif1_0.pwl.conv.weight]
+
+  conv5_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif2_0.pw.conv.weight]
+
+  conv6_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.16
+    weights: [module.stages.xif2_0.dw.conv.weight]
+
+  conv7_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.68
+    weights: [module.stages.xif2_0.pwl.conv.weight]
+
+  conv8_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.06
+    weights: [module.stages.xif5_0.pw.conv.weight]
+
+  conv9_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.95
+    weights: [module.stages.xif5_0.dw.conv.weight]
+
+  conv10_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.06
+    weights: [module.stages.xif5_0.pwl.conv.weight]
+
+  conv11_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif6_0.pw.conv.weight]
+
+  conv12_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.38
+    weights: [module.stages.xif6_0.dw.conv.weight]
+
+  conv13_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif6_0.pwl.conv.weight]
+
+  conv14_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.38
+    weights: [module.stages.xif7_0.pw.conv.weight]
+
+  conv15_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.57
+    weights: [module.stages.xif7_0.dw.conv.weight]
+
+  conv16_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.55
+    weights: [module.stages.xif7_0.pwl.conv.weight]
+
+  conv17_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.14
+    weights: [module.stages.xif8_0.pw.conv.weight]
+
+  conv18_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.44
+    weights: [module.stages.xif8_0.dw.conv.weight]
+
+  conv19_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.7
+    weights: [module.stages.xif8_0.pwl.conv.weight]
+
+  conv20_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.36
+    weights: [module.stages.xif9_0.pw.conv.weight]
+
+  conv21_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.46
+    weights: [module.stages.xif9_0.dw.conv.weight]
+
+  conv22_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.31
+    weights: [module.stages.xif9_0.pwl.conv.weight]
+
+  conv23_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.22
+    weights: [module.stages.xif10_0.pw.conv.weight]
+
+  conv24_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif10_0.dw.conv.weight]
+
+  conv25_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif10_0.pwl.conv.weight]
+
+  conv26_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.6
+    weights: [module.stages.xif11_0.pw.conv.weight]
+
+  conv27_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.26
+    weights: [module.stages.xif11_0.dw.conv.weight]
+
+  conv28_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.95
+    weights: [module.stages.xif11_0.pwl.conv.weight]
+
+  conv29_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.67
+    weights: [module.stages.xif12_0.pw.conv.weight]
+
+  conv30_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.74
+    weights: [module.stages.xif12_0.dw.conv.weight]
+
+  conv31_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.44
+    weights: [module.stages.xif12_0.pwl.conv.weight]
+
+  conv32_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif13_0.pw.conv.weight]
+
+  conv33_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif13_0.dw.conv.weight]
+
+  conv34_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.59
+    weights: [module.stages.xif13_0.pwl.conv.weight]
+
+  conv35_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.06
+    weights: [module.stages.xif14_0.pw.conv.weight]
+
+  conv36_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.7
+    weights: [module.stages.xif14_0.dw.conv.weight]
+
+  conv37_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.65
+    weights: [module.stages.xif14_0.pwl.conv.weight]
+
+  conv38_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.4
+    weights: [module.stages.xif15_0.pw.conv.weight]
+
+  conv39_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.49
+    weights: [module.stages.xif15_0.dw.conv.weight]
+
+  conv40_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.42
+    weights: [module.stages.xif15_0.pwl.conv.weight]
+
+  conv41_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.15
+    weights: [module.stages.xif16_0.pw.conv.weight]
+
+  conv42_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.5
+    weights: [module.stages.xif16_0.dw.conv.weight]
+
+  conv43_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.68
+    weights: [module.stages.xif16_0.pwl.conv.weight]
+
+  conv44_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif17_0.pw.conv.weight]
+
+  conv45_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.26
+    weights: [module.stages.xif17_0.dw.conv.weight]
+
+  conv46_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.74
+    weights: [module.stages.xif17_0.pwl.conv.weight]
+
+  conv47_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.55
+    weights: [module.stages.xif18_0.pw.conv.weight]
+
+  conv48_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.09
+    weights: [module.stages.xif18_0.dw.conv.weight]
+
+  conv49_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.54
+    weights: [module.stages.xif18_0.pwl.conv.weight]
+
+  conv50_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.47
+    weights: [module.stages.xif19_0.pw.conv.weight]
+
+  conv51_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.9
+    weights: [module.stages.xif19_0.dw.conv.weight]
+
+  conv52_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.16
+    weights: [module.stages.xif19_0.pwl.conv.weight]
+
+  conv53_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.74
+    weights: [module.stages.xif20_0.pw.conv.weight]
+
+  conv54_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.62
+    weights: [module.stages.xif20_0.dw.conv.weight]
+
+  conv55_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.46
+    weights: [module.stages.xif20_0.pwl.conv.weight]
+
+  conv56_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.23
+    weights: [module.stages.xif21_0.pw.conv.weight]
+
+  conv57_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.94
+    weights: [module.stages.xif21_0.dw.conv.weight]
+
+  conv58_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.35
+    weights: [module.stages.xif21_0.pwl.conv.weight]
+
+  conv59_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.05
+    final_sparsity: 0.66
+    weights: [module.last_stages.conv_k1.weight]
+
+  fc_pruner:
+    class: AutomatedGradualPruner
+    initial_sparsity: 0.3
+    final_sparsity: 0.9
+    weights: [module.last_stages.fc.weight]
+
+lr_schedulers:
+  pruning_lr:
+    class: StepLR
+    step_size: 30
+    gamma: 0.10
+
+policies:
+- pruner:
+    instance_name: conv1_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv2_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv3_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv4_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv5_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv6_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv7_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv8_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv9_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv10_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv11_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv12_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv13_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv14_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv15_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv16_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv17_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv18_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv19_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv20_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv21_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv22_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv23_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv24_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv25_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv26_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv27_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv28_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv29_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv30_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv31_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv32_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv33_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv34_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv35_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv36_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv37_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv38_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv39_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv40_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv41_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv42_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv43_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv44_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv45_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv46_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv47_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv48_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv49_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv50_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv51_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv52_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv53_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv54_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv55_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv56_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv57_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv58_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: conv59_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- pruner:
+    instance_name: fc_pruner
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 2
+
+- lr_scheduler:
+    instance_name: pruning_lr
+  starting_epoch: 1
+  ending_epoch: 100
+  frequency: 1

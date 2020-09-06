@@ -22,3 +22,5 @@ from .preresnet_cifar import *
 from .vgg_cifar import *
 from .resnet_cifar_earlyexit import *
 from .plain_cifar import *
+from .fbnet_a import *
+from .fbneta_cifar import *

@@ -34,6 +34,8 @@ msglogger = logging.getLogger()
 
 def save_checkpoint(epoch, arch, model, optimizer=None, scheduler=None,
                     extras=None, is_best=False, name=None, dir='.'):
+    
+  
     """Save a pytorch training checkpoint
 
     Args:
@@ -48,6 +50,7 @@ def save_checkpoint(epoch, arch, model, optimizer=None, scheduler=None,
         name: the name of the checkpoint file
         dir: directory in which to save the checkpoint
     """
+
     if not os.path.isdir(dir):
         raise IOError(ENOENT, 'Checkpoint directory does not exist at', os.path.abspath(dir))
 
@@ -85,7 +88,6 @@ def save_checkpoint(epoch, arch, model, optimizer=None, scheduler=None,
     torch.save(checkpoint, fullpath)
     if is_best:
         shutil.copyfile(fullpath, fullpath_best)
-
 
 def load_lean_checkpoint(model, chkpt_file, model_device=None):
     return load_checkpoint(model, chkpt_file, model_device=model_device,
@@ -169,6 +171,8 @@ def load_checkpoint(model, chkpt_file, optimizer=None,
 
     def _create_model_from_ckpt():
         try:
+            print("OZA")
+            quit()
             return distiller.models.create_model(False, checkpoint['dataset'], checkpoint['arch'],
                                                  checkpoint['is_parallel'], device_ids=None)
         except KeyError:
@@ -193,9 +197,11 @@ def load_checkpoint(model, chkpt_file, optimizer=None,
     if 'extras' in checkpoint:
         msglogger.info("=> Checkpoint['extras'] contents:\n{}\n".format(get_contents_table(checkpoint['extras'])))
 
+    '''
     if 'state_dict' not in checkpoint:
         raise ValueError("Checkpoint must contain the model parameters under the key 'state_dict'")
 
+    '''
     if not model:
         model = _create_model_from_ckpt()
         if not model:
@@ -230,7 +236,8 @@ def load_checkpoint(model, chkpt_file, optimizer=None,
 
     if normalize_dataparallel_keys:
         checkpoint['state_dict'] = {normalize_module_name(k): v for k, v in checkpoint['state_dict'].items()}
-    anomalous_keys = model.load_state_dict(checkpoint['state_dict'], strict)
+    #anomalous_keys = model.load_state_dict(checkpoint['state_dict'], strict) #ここ変更
+    anomalous_keys = model.load_state_dict(checkpoint) #FBnet用
     if anomalous_keys:
         # This is pytorch 1.1+
         missing_keys, unexpected_keys = anomalous_keys
