@@ -35,5 +35,5 @@ distiller.egg-info/
 # Jupyter
 .ipynb_checkpoints/
 
-data/
-/home/oza/pre-experiment/speeding/distiller/examples/classifier_compression/data
+#data/
+#/home/oza/pre-experiment/speeding/distiller/examples/classifier_compression/data
