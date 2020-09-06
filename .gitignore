@@ -36,4 +36,4 @@ distiller.egg-info/
 .ipynb_checkpoints/
 
 data/
-examples/classifier_compression/data
+/home/oza/pre-experiment/speeding/distiller/examples/classifier_compression/data
